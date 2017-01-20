@@ -1,0 +1,27 @@
+{
+  "pipeline": {
+    "name": "patient_join"
+  },
+  "transform": {
+    "image": "dwhitena/patient-join",
+    "cmd": [ "python", "/patient_join.py" ]
+  },
+  "parallelism_spec": {
+    "strategy": "CONSTANT",
+    "constant": "4"
+  },
+  "inputs": [
+    {
+      "repo": {
+        "name": "patient_info"
+      },
+      "method": "reduce"
+    },
+    {
+      "repo": {
+        "name": "patient_measurements"
+      },
+      "method": "reduce"
+    }
+  ]
+}
