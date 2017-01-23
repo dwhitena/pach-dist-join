@@ -8,7 +8,7 @@
   },
   "parallelism_spec": {
     "strategy": "CONSTANT",
-    "constant": "4"
+    "constant": "2"
   },
   "inputs": [
     {
@@ -21,7 +21,8 @@
       "repo": {
         "name": "patient_measurements"
       },
-      "method": "reduce"
+      "method": "global",
+      "lazy": true
     }
   ]
 }
